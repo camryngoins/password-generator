@@ -9,11 +9,12 @@
 
 // arrays 
 lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-upperLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-numbers = [1234567890];
-specialCharacters = ["!@#$%^&*()_|=+/?`~-|<>"];
+upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "|", "=", "+", "/", "?", "~", "-", "<", ">"];
 
-var selectedConfirm;
+var selectedOptions;
+
 
 
 // Get references to the #generate element
@@ -35,33 +36,22 @@ if (!passwordLength) {
  else if (passwordLength >= 129 || passwordLength <= 7 ) {
    window.alert("Please pick a number between 8 and 128 characters!");
    return;
- };
-// ask user if they would like to add lowercase letters or not 
- var passwordLowerCase = window.confirm("Would you like to include lowercase letters?");
- console.log(passwordLowerCase);
- if (passwordLowerCase) {
-   window.alert("You have chosen to add lowercase letters.");
-   selectedConfirm = (lowerLetters);
- } 
-//  if user chooses not to add lowercase letters, confirm this for them
- else if (!passwordLowerCase) {
-   window.alert("You have chosen not to add lowercase letters.");
  }
-
-//  ask user if they would like to add any uppercase letters or not 
- var passwordUpperCase = window.confirm("Would you like to include uppercase letters?");
- console.log(passwordUpperCase);
-
-
- var passwordNumber = window.confirm("Would you like to include numbers?");
- console.log(passwordNumber);
- var passwordCharacter = window.confirm("Would you like to include any special characters?");
- console.log(passwordCharacter);
+ else {
+   var passwordLowerCase = window.confirm("Would you like to add lowercase letters?");
+   var passwordUpperCase = window.confirm("Would you like to add uppercase letters?");
+   var passwordNumbers = window.confirm("Would you like to add numbers?")
+   var passwordCharacters = window.confirm("Would you like to add special characters?");
+ };
 
 
 
 
-  return "Your generated password goes here!";
+
+
+
+
+  return "";
 }
 
 // Write password to the #password input
