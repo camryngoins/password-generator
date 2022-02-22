@@ -6,10 +6,10 @@
 // 4. Display the generated password on the page. 
 
 // arrays 
-lowerLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-upperLetters = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-specialCharacters = ["!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "_", "|", "=", "+", "/", "?", "~", "-", "<", ">"];
+lowerLetters = ["abcdefghijklmnopqrstuvwxyz"];
+upperLetters = ["ABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+numbers = [1234567890];
+specialCharacters = ["!@#$%^&*()_+=/?"];
 
 // variables
 var passwordLowerCase;
@@ -74,16 +74,15 @@ else if (passwordLowerCase && passwordUpperCase && passwordNumbers) {
   selectedOptions = lowerLetters + upperLetters + numbers;
 } 
 
-var myPassword = "";
+var myPassword = [];
 
 for (var i = 0; i < passwordLength; i++) {
   var outcome = selectedOptions[Math.floor(Math.random() * selectedOptions.length)];
-  myPassword += selectedOptions
+  myPassword.push(outcome);
 } 
-return myPassword;
+var generatedPwd = myPassword.join("");
+return generatedPwd;
 };
-
-
 
 // Write password to the #password input
 function writePassword() {
