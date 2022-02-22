@@ -13,4 +13,3 @@ https://github.com/camryngoins/password-generator
 ## Live URL
 https://camryngoins.github.io/password-generator/
 
-## Screenshot
